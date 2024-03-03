@@ -130,7 +130,7 @@
             <i class="fa-solid fa-terminal"></i>
         </div>
         <div :style="{ 'background-color': pessoal ? '#504ea754' : 'transparent' }" class="p-2 ml-4">
-            <p @click.inside="pessoal = true" class="m-0">Informações Pessoais</p>
+            <p @click.inside="pessoal = !pessoal" class="m-0">Informações Pessoais</p>
         </div>
         <div :style="{ 'background-color': teste2 ? '#504ea754' : 'transparent' }" class="p-2 ml-4">
             <p @click.inside="teste2 = !teste2" class="m-0">Teste</p>
