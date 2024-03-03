@@ -1,0 +1,36 @@
+body {
+    background-image: url("static/background.jpg");
+    background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+
+margin: 0;
+padding: 0;
+overflow: hidden;
+}
+
+
+
+.movable-div {
+width: 200px;
+height: 150px;
+position: absolute;
+cursor: grab;
+}
+
+footer {
+
+background-color: #252930fd; /* Cor de fundo do rodapé */
+color: white; /* Cor do texto no rodapé */
+position: fixed; /* Fixar o rodapé na parte inferior da janela do navegador */
+width: 100%; /* Largura total do rodapé */
+bottom: 0; /* Alinhar o rodapé na parte inferior */
+}
+footer p {
+font-size: 15px; /* Adjust the size as needed */
+}
+
+/* Increase size of font-awesome icons */
+footer i {
+font-size: 20px; /* Adjust the size as needed */
+}

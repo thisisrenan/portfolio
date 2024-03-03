@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renan@Avlis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/4df09fcf98.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    
+</head>
+<body x-data="{ pessoal: true, teste2: false}"  style="user-select: none;">
+ 
+  
+        <div x-show="pessoal" class="movable-div" id="myDiv1" style="width: 40%; border-radius: 5em; top: 5%; left: 45%;">
+            <div class="card-header" style="background-color: #252930fd; " >
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-center align-items-center text-center">
+                        <span class="badge rounded-circle mr-2" style="background-color: #4682b4;"><i class="fa-regular fa-sun"></i></span>
+                    </div>
+                    <span  style="font-family: monospace; color: #d4d4d4; border-radius: 15px; ">renan : bash - avlis</span>
+                    <div class="d-flex justify-content-center align-items-center text-center">
+                        <span class="badge rounded-circle ml-2" style="background-color: #ffd700;"><i class="fa-solid fa-minus"></i></span>
+                        <span class="badge rounded-circle mx-2" style="background-color: #9370db;"><i class="fa-regular fa-square"></i></span>
+                        
+                        <span  @click.inside="pessoal = false" class="badge rounded-circle mr-2" style="background-color: #ff6347;"><i class="fa-solid fa-xmark"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="background-color: #1e1e1ed5;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5"> 
+                            <img src="./static/foto.jpg" alt="" style="width: 100%; height: auto; aspect-ratio: 1/1; ">
+                        </div>
+                        <div class="col-md-7">
+                            <div style="font-family: monospace; color: #d4d4d4; border-radius: 15px; padding: 15px;">
+                                <p>
+                                    <strong>renan@avlis</strong><br>
+                                    ----------------------- <br>
+                                    <strong>SOBRE:</strong> Apenas fazendo oque der vontade<br>
+        
+                                    <strong>TECNOLOGIAS:</strong> HTML,CSS,JavaScript,C,C++,Java,Python<br>
+                                    <strong>EDUCAÇÃO:</strong> Bacharel em Ciência da Computação/UTFPR-CM<br>
+        
+                                    <strong>CONTATO:</strong> renan@example.com<br>
+                                    <strong>LINKEDIN:</strong> linkedin.com/in/renan<br>
+                                    <strong>GITHUB:</strong> github.com/thisisrenan<br>
+                                    <strong>PORTFÓLIO:</strong> renanportfolio.com<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+                        <div  style="font-family: monospace;  color: #d4d4d4; border-radius: 15px; ">
+                            <p>
+                                renan ~/portifolio/projetos >
+                            </p>
+                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div x-show="teste2" class="movable-div" id="myDiv2" style="width: 50%; border-radius: 5em; top: 0%; left: 0%;">
+            <div class="card-header" style="background-color: #252930fd; " >
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-center align-items-center text-center">
+                        <span class="badge rounded-circle mr-2" style="background-color: #4682b4;"><i class="fa-regular fa-sun"></i></span>
+                    </div>
+                    <span  style="font-family: monospace; color: #d4d4d4; border-radius: 15px; ">renan : bash - avlis</span>
+                    <div class="d-flex justify-content-center align-items-center text-center">
+                        <span class="badge rounded-circle ml-2" style="background-color: #ffd700;"><i class="fa-solid fa-minus"></i></span>
+                        <span class="badge rounded-circle mx-2" style="background-color: #9370db;"><i class="fa-regular fa-square"></i></span>
+                        
+                        <span  @click.inside="teste2 = false" class="badge rounded-circle mr-2" style="background-color: #ff6347;"><i class="fa-solid fa-xmark"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="background-color: #1e1e1ed5;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5"> 
+                            <img src="./static/foto.jpeg" alt="" style="width: 100%; height: auto; aspect-ratio: 1/1; ">
+                        </div>
+                        <div class="col-md-7">
+                            <div style="font-family: monospace; color: #d4d4d4; border-radius: 15px; padding: 15px;">
+                                <p>
+                                    <strong>renan@avlis</strong><br>
+                                    ----------------------- <br>
+                                    <strong>CURSO :</strong> Ciência da Computação<br>
+        
+                                    <strong>TECNOLOGIAS:</strong> HTML, CSS, JavaScript, Python<br>
+                                    <strong>EDUCAÇÃO:</strong> Bacharel em Ciência da Computação, UTFPR-CM<br>
+        
+                                    <strong>CONTATO:</strong> renan@example.com<br>
+                                    <strong>LINKEDIN:</strong> linkedin.com/in/renan<br>
+                                    <strong>GITHUB:</strong> github.com/thisisrenan<br>
+                                    <strong>PORTFÓLIO:</strong> renanportfolio.com<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <div  style="font-family: monospace;  color: #d4d4d4; border-radius: 15px; ">
+                            <p>
+                                renan ~/portifolio/projetos >
+                            </p>
+                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+ 
+   
+   
+
+
+   <footer class="d-flex justify-content-between">
+    <div class="d-flex align-items-center">
+        <div class="mr-4"> 
+            <i class="fa-brands fa-ubuntu" style="color: #ffffff;"></i>
+            <i class="fa-solid fa-folder"></i>
+            <i class="fa-brands fa-chrome"></i>
+            <i class="fa-solid fa-terminal"></i>
+        </div>
+        <div :style="{ 'background-color': pessoal ? '#504ea754' : 'transparent' }" class="p-2 ml-4">
+            <p @click.inside="pessoal = true" class="m-0">Informações Pessoais</p>
+        </div>
+        <div :style="{ 'background-color': teste2 ? '#504ea754' : 'transparent' }" class="p-2 ml-4">
+            <p @click.inside="teste2 = !teste2" class="m-0">Teste</p>
+        </div>
+    </div>
+
+    <div class="d-flex align-items-center">
+        <div>
+            <i class="fa-solid fa-network-wired"></i>
+            <i class="fa-brands fa-bluetooth"></i>
+            <i class="fa-solid fa-wifi"></i>
+            <i class="fa-solid fa-volume-high"></i>
+            <i class="fa-solid fa-battery-quarter"></i>
+        </div>
+        <p class="m-0" style="font-family: sans-serif;">18:00</p>
+    </div>
+</footer>
+</body>
+
+<script>
+
+</script>
+
+</html>
