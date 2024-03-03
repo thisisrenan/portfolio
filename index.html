@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renan@Avlis</title>
+    <title>Renan@Silva</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/4df09fcf98.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -12,7 +12,23 @@
     <script src="script.js"></script>
     
 </head>
-<body x-data="{ pessoal: true, Documentos: true, video: false}"  style="user-select: none;">
+<body x-data="{ 
+    pessoal: true, 
+    Documentos: true, 
+    Projetos: false, 
+    Filme: false, 
+    video: false,
+    DadoFilme: [],
+    listFilmes: ['tt1856101', 'tt0816692', 'tt0137523','tt1853728','tt0338013', 'tt0120382'],
+    fetchFilme() {
+        const filmeAleatorio = this.listFilmes[Math.floor(Math.random() * this.listFilmes.length)];
+    
+        fetch(`https://www.omdbapi.com/?i=${filmeAleatorio}&apikey=5873409a`)
+            .then(response => response.json())
+            .then(data => this.DadoFilme = data).then(console.log(this.DadoFilme));
+            
+    },
+}" style="user-select: none;">
  
   
         <div x-show="pessoal" class="movable-div" id="myDiv1" style="width: 40%; border-radius: 5em; top: 2%; left: 55%;">
@@ -21,7 +37,7 @@
                     <div class="d-flex justify-content-center align-items-center text-center">
                         <span class="badge rounded-circle mr-2" style="background-color: #4682b4;"><i class="fa-regular fa-sun"></i></span>
                     </div>
-                    <span  style="font-family: monospace; color: #d4d4d4; border-radius: 15px; ">renan : bash - avlis</span>
+                    <span  style="font-family: monospace; color: #d4d4d4; border-radius: 15px; ">renan : bash - Silva</span>
                     <div class="d-flex justify-content-center align-items-center text-center">
                         <span class="badge rounded-circle ml-2" style="background-color: #ffd700;"><i class="fa-solid fa-minus"></i></span>
                         <span class="badge rounded-circle mx-2" style="background-color: #9370db;"><i class="fa-regular fa-square"></i></span>
@@ -39,7 +55,7 @@
                         <div class="col-md-7">
                             <div style="font-family: monospace; color: #d4d4d4; border-radius: 15px; padding: 15px;">
                                 <p>
-                                    <strong>renan@avlis</strong><br>
+                                    <strong>renan@Silva</strong><br>
                                     ----------------------- <br>
                                     <strong>SOBRE:</strong> Apenas fazendo oque der vontade<br>
         
@@ -66,7 +82,7 @@
             </div>
         </div>
 
-        <div x-show="Documentos" class="movable-div" id="myDiv2" style="width: 50%; border-radius: 5em; top: 50%; left: 2%;">
+        <div x-show="Documentos" class="movable-div" id="myDiv2" style="width: 50%; border-radius: 5em; top: 60%; left: 2%;">
             <div class="card-header" style="background-color: #252930fd; " >
                 <div class="d-flex justify-content-between">
                     <div class="d-flex justify-content-center align-items-center text-center">
@@ -85,7 +101,7 @@
                 <div class="container">
                     <div class="row mt-5 text-center">
                         <div class=" col-2">
-                            <div class="" style="display: inline-block;">
+                            <div @click.inside="Projetos = true" style="display: inline-block;">
                                 <div class="card-body">
                                     <div class="Documentos">
                                         <i class="fa-regular fa-folder-open fa-2xl" style="color: #9fa0a3; font-size: 5em;"></i>
@@ -124,6 +140,16 @@
                                 </div>
                             </div>
                           </div>
+                          <div class=" col-2">
+                            <div @click="fetchFilme" x-on:click.inside="Filme = true" style="display: inline-block;">
+                                <div class="card-body">
+                                    <div class="Documentos">
+                                        <i class="fa-solid fa-film fa-2xl" style="color: #9fa0a3; font-size: 5em;"></i>
+                                        <p class="mt-4" style="color: white;">Recomendação De Filmes</p>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
                           
                         
                     </div>
@@ -131,11 +157,69 @@
                     </div>
                     
                 </div>
-            </div>
         </div>
+       
 
-        
-        <div x-show="video" class="movable-div" id="myDiv2" style="width: 620px; height: 315px; border-radius: 5em; top: 5%; left: 10%;">
+        <div x-show="Projetos" class="movable-div" id="myDiv3" style="width: 30%; border-radius: 5em; top: 60%; left: 60%; z-index: 10;">
+            <div class="card-header" style="background-color: #252930fd; " >
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-center align-items-center text-center">
+                        <span class="badge rounded-circle mr-2" style="background-color: #4682b4;"><i class="fa-regular fa-sun"></i></span>
+                    </div>
+                    <span  style="font-family: monospace; color: #d4d4d4; border-radius: 15px; ">Renan : Projetos</span>
+                    <div class="d-flex justify-content-center align-items-center text-center">
+                        <span class="badge rounded-circle ml-2" style="background-color: #ffd700;"><i class="fa-solid fa-minus"></i></span>
+                        <span class="badge rounded-circle mx-2" style="background-color: #9370db;"><i class="fa-regular fa-square"></i></span>
+                        
+                        <span  @click.inside="Projetos = false" class="badge rounded-circle mr-2" style="background-color: #ff6347;"><i class="fa-solid fa-xmark"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="background-color: #1e1e1ed5;">
+                <div class="container">
+                    <div class="row mt-5 text-center">
+                          <div class=" col-3">
+                            <div  style="display: inline-block;">
+                                <div class="card-body">
+                                    <div class="Documentos">
+                                        <i class="fa-solid fa-file fa-2xl" style="color: #9fa0a3; font-size: 5em;"></i>
+                                        <p  class="mt-4" style="color: white;">Em Desenvolvimento</p>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class=" col-3">
+                            <div  style="display: inline-block;">
+                                <div class="card-body">
+                                    <div class="Documentos">
+                                        <i class="fa-solid fa-file fa-2xl" style="color: #9fa0a3; font-size: 5em;"></i>
+                                        <p  class="mt-4" style="color: white;">Em Desenvolvimento</p>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class=" col-3">
+                            <div  style="display: inline-block;">
+                                <div class="card-body">
+                                    <div class="Documentos">
+                                        <i class="fa-solid fa-file fa-2xl" style="color: #9fa0a3; font-size: 5em;"></i>
+                                        <p  class="mt-4" style="color: white;">Em Desenvolvimento</p>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+            
+                    </div>
+                   
+                    </div>
+                    
+                </div>
+        </div>
+       
+
+
+
+        <div x-show="video" class="movable-div" id="myDiv4" style="width: 620px; height: 315px; border-radius: 5em; top: 5%; left: 10%;">
             <div class="card-header" style="background-color: #252930fd; " >
                 <div class="d-flex justify-content-between">
                     <div class="d-flex justify-content-center align-items-center text-center">
@@ -154,7 +238,50 @@
                 <div class="container align-items-center justify-content-center">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/_6DvrRgNLJc?si=--Or59piGx5Ir_W8&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        </div>
         </div>
-    </div>
+        </div>
+
+        <div x-show="Filme" class="movable-div" id="myDiv5" style="width: 720px; height: 315px; border-radius: 5em; top: 3%; left: 10%;">
+            <div class="card-header" style="background-color: #252930fd; " >
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-center align-items-center text-center">
+                        <span class="badge rounded-circle mr-2" style="background-color: #4682b4;"><i class="fa-regular fa-sun"></i></span>
+                    </div>
+                    <span  style="font-family: monospace; color: #d4d4d4; border-radius: 15px; ">Renan : Recomendação De Filmes</span>
+                    <div class="d-flex justify-content-center align-items-center text-center">
+                        <span class="badge rounded-circle ml-2" style="background-color: #ffd700;"><i class="fa-solid fa-minus"></i></span>
+                        <span class="badge rounded-circle mx-2" style="background-color: #9370db;"><i class="fa-regular fa-square"></i></span>
+                        
+                        <span  @click.inside="Filme = false" class="badge rounded-circle mr-2" style="background-color: #ff6347;"><i class="fa-solid fa-xmark"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="background-color: #1e1e1ed5;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5"> 
+                            <img x-bind:src="DadoFilme.Poster" alt="" style="width: 100%; height: 100%; ">
+                        </div>
+                        <div class="col-md-7">
+                            <div style="font-family: monospace; color: #d4d4d4; border-radius: 15px; padding: 15px;">
+                                <p><span > <strong>  Título: </strong></span> <span x-text="DadoFilme.Title"></span></p>
+                                <p><span > <strong>  Ano:</strong></span> <span x-text="DadoFilme.Year"></span></p>
+                                <p><span > <strong>  Gênero:</strong></span> <span x-text="DadoFilme.Genre"></span></p>
+                                <p><span > <strong>  Diretor:</strong></span> <span x-text="DadoFilme.Director"></span></p>
+                                <p><span > <strong>  Avaliação:</strong></span> <span x-text="DadoFilme.Rated"></span></p>
+                                <p><span > <strong>  Trama:</strong></span> <span x-text="DadoFilme.Plot"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-3 ">
+                        <div  style="font-family: monospace;  color: #d4d4d4; border-radius: 15px; ">
+                            <p>
+                                renan ~/portifolio/Filmes >
+                            </p>
+                    </div>
+                    </div>
+                </div>
+        </div>
+        </div>
    
    
 
@@ -173,8 +300,14 @@
         <div :style="{ 'background-color': Documentos ? '#504ea754' : 'transparent' }" class="p-2 ml-4">
             <p @click.inside="Documentos = !Documentos" class="m-0">Documentos</p>
         </div>
+        <div :style="{ 'background-color': Projetos ? '#504ea754' : 'transparent' }" class="p-2 ml-4">
+            <p @click.inside="Projetos = !Projetos" class="m-0">Projetos</p>
+        </div>
         <div x-show="video" :style="{ 'background-color': video ? '#504ea754' : 'transparent' }" class="p-2 ml-4">
             <p @click.inside="video = true" class="m-0">Video Pessoal</p>
+        </div>
+        <div x-show="Filme" :style="{ 'background-color': Filme ? '#504ea754' : 'transparent' }" class="p-2 ml-4">
+            <p @click.inside="Filme = true" class="m-0">Recomendação De Filmes</p>
         </div>
         
 

@@ -18,23 +18,24 @@ position: absolute;
 cursor: grab;
 }
 
+
 footer {
 
-background-color: #252930fd; /* Cor de fundo do rodapé */
-color: white; /* Cor do texto no rodapé */
-position: fixed; /* Fixar o rodapé na parte inferior da janela do navegador */
-width: 100%; /* Largura total do rodapé */
-bottom: 0; /* Alinhar o rodapé na parte inferior */
+background-color: #252930fd; 
+color: white; 
+position: fixed; 
+width: 100%; 
+bottom: 0; 
 z-index: 9999;
 }
 footer p {
-font-size: 15px; /* Adjust the size as needed */
+font-size: 15px; 
 }
 
-/* Increase size of font-awesome icons */
+
 footer i {
-font-size: 20px; /* Adjust the size as needed */
+font-size: 20px; 
 }
 documentos i {
-    font-size: 20px; /* Adjust the size as needed */
+    font-size: 20px; 
     }

@@ -1,8 +1,6 @@
 function resetZIndex() {
-    // Seleciona todos os elementos com a classe específica ou outro seletor que você preferir
     var elements = document.querySelectorAll('.movable-div');
     console.log("testw")
-    // Itera sobre os elementos e redefine o z-index
     elements.forEach(function(element) {
         element.style.zIndex = 0;
     });
@@ -25,12 +23,10 @@ class DraggableDiv {
         this.offsetY = e.clientY - this.element.getBoundingClientRect().top;
         this.element.style.cursor = "grabbing";
 
-        // Incrementar o z-index máximo
         resetZIndex();
         this.maxZIndex += 1;
         this.element.style.zIndex = this.maxZIndex;
 
-        // Mudar a posição para relative se for static
         if (window.getComputedStyle(this.element).position === "static") {
             this.element.style.position = "relative";
         }
