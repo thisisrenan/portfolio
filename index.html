@@ -12,10 +12,10 @@
     <script src="script.js"></script>
     
 </head>
-<body x-data="{ pessoal: true, teste2: false}"  style="user-select: none;">
+<body x-data="{ pessoal: true, Documentos: true, video: false}"  style="user-select: none;">
  
   
-        <div x-show="pessoal" class="movable-div" id="myDiv1" style="width: 40%; border-radius: 5em; top: 5%; left: 45%;">
+        <div x-show="pessoal" class="movable-div" id="myDiv1" style="width: 40%; border-radius: 5em; top: 2%; left: 55%;">
             <div class="card-header" style="background-color: #252930fd; " >
                 <div class="d-flex justify-content-between">
                     <div class="d-flex justify-content-center align-items-center text-center">
@@ -66,57 +66,95 @@
             </div>
         </div>
 
-        <div x-show="teste2" class="movable-div" id="myDiv2" style="width: 50%; border-radius: 5em; top: 0%; left: 0%;">
+        <div x-show="Documentos" class="movable-div" id="myDiv2" style="width: 50%; border-radius: 5em; top: 50%; left: 2%;">
             <div class="card-header" style="background-color: #252930fd; " >
                 <div class="d-flex justify-content-between">
                     <div class="d-flex justify-content-center align-items-center text-center">
                         <span class="badge rounded-circle mr-2" style="background-color: #4682b4;"><i class="fa-regular fa-sun"></i></span>
                     </div>
-                    <span  style="font-family: monospace; color: #d4d4d4; border-radius: 15px; ">renan : bash - avlis</span>
+                    <span  style="font-family: monospace; color: #d4d4d4; border-radius: 15px; ">Renan : Documentos</span>
                     <div class="d-flex justify-content-center align-items-center text-center">
                         <span class="badge rounded-circle ml-2" style="background-color: #ffd700;"><i class="fa-solid fa-minus"></i></span>
                         <span class="badge rounded-circle mx-2" style="background-color: #9370db;"><i class="fa-regular fa-square"></i></span>
                         
-                        <span  @click.inside="teste2 = false" class="badge rounded-circle mr-2" style="background-color: #ff6347;"><i class="fa-solid fa-xmark"></i></span>
+                        <span  @click.inside="Documentos = false" class="badge rounded-circle mr-2" style="background-color: #ff6347;"><i class="fa-solid fa-xmark"></i></span>
                     </div>
                 </div>
             </div>
             <div class="card-body" style="background-color: #1e1e1ed5;">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-5"> 
-                            <img src="./static/foto.jpeg" alt="" style="width: 100%; height: auto; aspect-ratio: 1/1; ">
-                        </div>
-                        <div class="col-md-7">
-                            <div style="font-family: monospace; color: #d4d4d4; border-radius: 15px; padding: 15px;">
-                                <p>
-                                    <strong>renan@avlis</strong><br>
-                                    ----------------------- <br>
-                                    <strong>CURSO :</strong> Ciência da Computação<br>
-        
-                                    <strong>TECNOLOGIAS:</strong> HTML, CSS, JavaScript, Python<br>
-                                    <strong>EDUCAÇÃO:</strong> Bacharel em Ciência da Computação, UTFPR-CM<br>
-        
-                                    <strong>CONTATO:</strong> renan@example.com<br>
-                                    <strong>LINKEDIN:</strong> linkedin.com/in/renan<br>
-                                    <strong>GITHUB:</strong> github.com/thisisrenan<br>
-                                    <strong>PORTFÓLIO:</strong> renanportfolio.com<br>
-                                </p>
+                    <div class="row mt-5 text-center">
+                        <div class=" col-2">
+                            <div class="" style="display: inline-block;">
+                                <div class="card-body">
+                                    <div class="Documentos">
+                                        <i class="fa-regular fa-folder-open fa-2xl" style="color: #9fa0a3; font-size: 5em;"></i>
+                                        <p  class="mt-4" style="color: white;">Projetos</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                          </div>
+                          <div class=" col-2">
+                            <div style="display: inline-block;">
+                                <div class="card-body">
+                                    <div class="Documentos">
+                                        <i class="fa-regular fa-folder-open fa-2xl" style="color: #9fa0a3; font-size: 5em;"></i>
+                                        <p  class="mt-4" style="color: white;">Documentos</p>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class=" col-2">
+                            <div @click.inside="pessoal = true" style="display: inline-block;">
+                                <div class="card-body">
+                                    <div class="Documentos">
+                                        <i class="fa-solid fa-file fa-2xl" style="color: #9fa0a3; font-size: 5em;"></i>
+                                        <p  class="mt-4" style="color: white;">Informações Pessoais</p>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class=" col-2">
+                            <div @click.inside="video = true"  style="display: inline-block;">
+                                <div class="card-body">
+                                    <div class="Documentos">
+                                        <i class="fa-solid fa-file-video fa-2xl" style="color: #9fa0a3; font-size: 5em;"></i>
+                                        <p   class="mt-4" style="color: white;">Video Pessoal</p>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                          
+                        
                     </div>
-                    <div class="col-md-6 mt-3">
-                        <div  style="font-family: monospace;  color: #d4d4d4; border-radius: 15px; ">
-                            <p>
-                                renan ~/portifolio/projetos >
-                            </p>
-                    </div>
+                   
                     </div>
                     
                 </div>
             </div>
         </div>
- 
+
+        
+        <div x-show="video" class="movable-div" id="myDiv2" style="width: 620px; height: 315px; border-radius: 5em; top: 5%; left: 10%;">
+            <div class="card-header" style="background-color: #252930fd; " >
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-center align-items-center text-center">
+                        <span class="badge rounded-circle mr-2" style="background-color: #4682b4;"><i class="fa-regular fa-sun"></i></span>
+                    </div>
+                    <span  style="font-family: monospace; color: #d4d4d4; border-radius: 15px; ">Renan : Video Pessoal</span>
+                    <div class="d-flex justify-content-center align-items-center text-center">
+                        <span class="badge rounded-circle ml-2" style="background-color: #ffd700;"><i class="fa-solid fa-minus"></i></span>
+                        <span class="badge rounded-circle mx-2" style="background-color: #9370db;"><i class="fa-regular fa-square"></i></span>
+                        
+                        <span  @click.inside="video = false" class="badge rounded-circle mr-2" style="background-color: #ff6347;"><i class="fa-solid fa-xmark"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="background-color: #1e1e1ed5;">
+                <div class="container align-items-center justify-content-center">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_6DvrRgNLJc?si=--Or59piGx5Ir_W8&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        </div>
+        </div>
+    </div>
    
    
 
@@ -132,9 +170,14 @@
         <div :style="{ 'background-color': pessoal ? '#504ea754' : 'transparent' }" class="p-2 ml-4">
             <p @click.inside="pessoal = !pessoal" class="m-0">Informações Pessoais</p>
         </div>
-        <div :style="{ 'background-color': teste2 ? '#504ea754' : 'transparent' }" class="p-2 ml-4">
-            <p @click.inside="teste2 = !teste2" class="m-0">Teste</p>
+        <div :style="{ 'background-color': Documentos ? '#504ea754' : 'transparent' }" class="p-2 ml-4">
+            <p @click.inside="Documentos = !Documentos" class="m-0">Documentos</p>
         </div>
+        <div x-show="video" :style="{ 'background-color': video ? '#504ea754' : 'transparent' }" class="p-2 ml-4">
+            <p @click.inside="video = true" class="m-0">Video Pessoal</p>
+        </div>
+        
+
     </div>
 
     <div class="d-flex align-items-center">
