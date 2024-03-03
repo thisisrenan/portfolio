@@ -25,6 +25,7 @@ color: white; /* Cor do texto no rodapé */
 position: fixed; /* Fixar o rodapé na parte inferior da janela do navegador */
 width: 100%; /* Largura total do rodapé */
 bottom: 0; /* Alinhar o rodapé na parte inferior */
+z-index: 9999;
 }
 footer p {
 font-size: 15px; /* Adjust the size as needed */
