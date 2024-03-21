@@ -18,7 +18,7 @@
     
 </head>
 
-<body style="background-color: #F9FAFB;" x-data="{ nomeArquivo: '' }" x-init="nomeArquivo = getNomeArquivo()">
+<body style="background-color: #F9FAFB;" x-data="{ nomeArquivo: '', pasta: '' }" x-init="nomeArquivo = getNomeArquivo(), pasta = getFolder()">
     
 
 
@@ -31,9 +31,12 @@
 
 
     <main x-if="nomeArquivo" class="container-fluid w-50 border p-5 mt-3" style="border-color: grey; background-color: #ffffff;">
-        <ul class=" container-fluid navbar-nav d-flex flex-row justify-content-center mb-3" style="width: 15%;">
+        <ul class=" container-fluid navbar-nav d-flex flex-row justify-content-between mb-3" style="width: 15%;">
             <li class="nav-item active">
-                <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" href="/portfolio/">Home</a>
+                <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" href="/">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" :href="`${pasta}.html`">Lista</a>
             </li>
         </ul>
         <zero-md :src="`./MDS/${nomeArquivo}`"></zero-md>
@@ -46,8 +49,17 @@
 
 <script>
     function getNomeArquivo() {
-        const urlParams = new URLSearchParams(window.location.search);
+        var urlParams = new URLSearchParams(window.location.search);
         return urlParams.get('md') || '';
+    }
+    function getFolder(){
+        var caminho = getNomeArquivo()
+        let indiceBarra = caminho.lastIndexOf("/");
+
+        if (indiceBarra !== -1) {
+            let caminhoSemUltimaParte = caminho.substring(0, indiceBarra);
+            return caminhoSemUltimaParte
+        } 
     }
 </script>
 
