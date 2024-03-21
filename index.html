@@ -12,11 +12,13 @@
     <script src="script.js"></script>
     
 </head>
+
 <body x-data="{ 
     pessoal: true, 
     Documentos: true, 
     Projetos: false, 
     Filme: false, 
+    Academico: false,
     video: false,
     DadoFilme: [],
     listFilmes: ['tt1856101', 'tt0816692', 'tt0137523','tt1853728','tt0338013', 'tt0120382'],
@@ -29,8 +31,8 @@
             
     },
 }" style="user-select: none;">
- 
-  
+    
+    
         <div x-show="pessoal" class="movable-div" id="myDiv1" style="width: 40%; border-radius: 5em; top: 2%; left: 55%;">
             <div class="card-header" style="background-color: #252930fd; " >
                 <div class="d-flex justify-content-between">
@@ -111,11 +113,11 @@
                             </div>
                           </div>
                           <div class=" col-2">
-                            <div style="display: inline-block;">
+                            <div @click.inside="Academico = true" style="display: inline-block;">
                                 <div class="card-body">
                                     <div class="Documentos">
                                         <i class="fa-regular fa-folder-open fa-2xl" style="color: #9fa0a3; font-size: 5em;"></i>
-                                        <p  class="mt-4" style="color: white;">Documentos</p>
+                                        <p  class="mt-4" style="color: white;">Acadêmico</p>
                                     </div>
                                 </div>
                             </div>
@@ -218,6 +220,42 @@
        
 
 
+        <div x-show="Academico" class="movable-div" id="myDiv3" style="width: 30%; border-radius: 5em; top: 30%; left: 30%; z-index: 10;">
+            <div class="card-header" style="background-color: #252930fd; " >
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-center align-items-center text-center">
+                        <span class="badge rounded-circle mr-2" style="background-color: #4682b4;"><i class="fa-regular fa-sun"></i></span>
+                    </div>
+                    <span  style="font-family: monospace; color: #d4d4d4; border-radius: 15px; ">Renan : Acadêmico</span>
+                    <div class="d-flex justify-content-center align-items-center text-center">
+                        <span class="badge rounded-circle ml-2" style="background-color: #ffd700;"><i class="fa-solid fa-minus"></i></span>
+                        <span class="badge rounded-circle mx-2" style="background-color: #9370db;"><i class="fa-regular fa-square"></i></span>
+                        
+                        <span  @click.inside="Academico = false" class="badge rounded-circle mr-2" style="background-color: #ff6347;"><i class="fa-solid fa-xmark"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="background-color: #1e1e1ed5;">
+                <div class="container">
+                    <div class="row mt-5 text-center">
+                          <div class=" col-3">
+                            <div x-data="{ arquivo: 'teste.md' }"  style="display: inline-block;">
+                                <div class="card-body">
+                                    <a  href="godot.html" class="Documentos" style="text-decoration: none;" target="_blank">
+                                        <i class="fa-solid fa-file fa-2xl" style="color: #9fa0a3; font-size: 5em;"></i>
+                                        <p  class="mt-4" style="color: white;">Godot</p>
+                                    </a>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                   
+                    </div>
+                    
+                </div>
+        </div>
+
+
 
         <div x-show="video" class="movable-div" id="myDiv4" style="width: 620px; height: 315px; border-radius: 5em; top: 5%; left: 10%;">
             <div class="card-header" style="background-color: #252930fd; " >
@@ -308,6 +346,9 @@
         </div>
         <div x-show="Filme" :style="{ 'background-color': Filme ? '#504ea754' : 'transparent' }" class="p-2 ml-4">
             <p @click.inside="Filme = true" class="m-0">Recomendação De Filmes</p>
+        </div>
+        <div x-show="Academico" :style="{ 'background-color': Academico ? '#504ea754' : 'transparent' }" class="p-2 ml-4">
+            <p @click.inside="Academico = true" class="m-0">Acâdemico</p>
         </div>
         
 
