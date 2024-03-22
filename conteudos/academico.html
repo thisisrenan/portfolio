@@ -39,7 +39,7 @@
                 <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" :href="`${pasta}.html`">Lista</a>
             </li>
         </ul>
-        <zero-md :src="`./MDS/${nomeArquivo}`"></zero-md>
+        <zero-md src="`/MDS/${nomeArquivo}`"></zero-md>
         <template x-if="!nomeArquivo">
             <div>Contents...</div>
         </template>
@@ -48,6 +48,7 @@
 
 
 <script>
+    //`/MDS/${nomeArquivo}`
     function getNomeArquivo() {
         var urlParams = new URLSearchParams(window.location.search);
         return urlParams.get('md') || '';
